@@ -90,6 +90,14 @@
         box-shadow: 0 14px 54px 6px rgba(0,0,0,0.38), 0 6px 36px rgba(0,0,0,0.3);
         z-index: 2;
       }
+      .card-img {
+        width: 270px;
+        height: 270px;
+        object-fit: cover; /* 이미지가 비율에 맞춰 꽉 차게 설정 */
+        border-radius: 16.5px; /* 모서리를 둥글게 */
+        margin-bottom: 39px;
+        display: block;
+      }
       .img-placeholder {
         width: 270px;  /* 180px * 1.5 */
         height: 270px; /* 180px * 1.5 (이미지 자리를 세로로 1.5배 증가) */
@@ -174,16 +182,16 @@
       <div class="title">Start Your AI Business with Orbital</div>
       <div class="cards-row">
         <div class="card">
-          <div class="img-placeholder">이미지 자리</div>
-          <button class="action-button">Learn More</button>
+          <img src="./assets/space_busyness.png" alt="space_busyness" class="card-img" width="270" height="270">
+          <button class="action-button">busyness</button>
         </div>
         <div class="card">
-          <div class="img-placeholder">이미지 자리</div>
-          <button class="action-button">Learn More</button>
+          <img src="./assets/beauty.jpg" alt="beauty" class="card-img" width="270" height="270">
+          <button class="action-button">my favorite</button>
         </div>
         <div class="card">
-          <div class="img-placeholder">이미지 자리</div>
-          <button class="action-button">Learn More</button>
+          <img src="./assets/me.jpg" alt="me" class="card-img" width="270" height="270">
+          <button class="action-button">about me</button>
         </div>
       </div>
     </div>
