@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Your AI Business with Orbital</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background: radial-gradient(ellipse at 70% 30%, #3a3a57 0%, #1a1333 80%);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      /* 우주 배경용 별 */
+      .stars {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .star {
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+        opacity: 0.7;
+        animation: twinkle 3s infinite alternate;
+      }
+
+      @keyframes twinkle {
+        from { opacity: 0.7; }
+        to { opacity: 0.3; }
+      }
+      .content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        margin-top: 3.8vh;
+      }
+      .title {
+        color: #ffffff !important;
+        font-size: 4rem; /* 4rem * 1.5 */
+        font-weight: 900;
+        text-align: center;
+        text-shadow:
+          0 4px 20px rgba(0,0,0,0.8),
+          0 2px 8px rgba(0,0,0,0.85),
+          0 1px 1px rgba(0,0,0,0.9);
+        line-height: 1.2;
+        margin-top: 0;
+        margin-bottom: 6vh; /* 4vh * 1.5 */
+        background: none;
+      }
+      .cards-row {
+        display: flex;
+        flex-direction: row;
+        gap: 48px; /* 32px * 1.5 */
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        margin-top: 0;
+      }
+      .card {
+        background: rgba(30, 25, 60, 0.7);
+        border-radius: 27px; /* 18px * 1.5 */
+        box-shadow: 0 6px 36px rgba(0, 0, 0, 0.3); /* shadow more prominent */
+        padding: 36px 33px 54px 33px; /* padding * 1.5 */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 345px; /* 230px * 1.5 */
+        min-height: 405px; /* 270px * 1.5 */
+        /* 카드 호버 애니메이션 추가 */
+        transition: transform 0.28s cubic-bezier(.22,1,.36,1), box-shadow 0.28s cubic-bezier(.22,1,.36,1);
+      }
+      .card:hover,
+      .card:focus-within {
+        transform: translateY(-16px) scale(1.03);
+        box-shadow: 0 14px 54px 6px rgba(0,0,0,0.38), 0 6px 36px rgba(0,0,0,0.3);
+        z-index: 2;
+      }
+      .img-placeholder {
+        width: 270px;  /* 180px * 1.5 */
+        height: 270px; /* 180px * 1.5 (이미지 자리를 세로로 1.5배 증가) */
+        background: repeating-linear-gradient(45deg, #2e2750 0 24px, #49436a 24px 48px); /* 16px, 32px * 1.5 */
+        color: #bbb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 39px; /* 26px * 1.5 */
+        border-radius: 16.5px; /* 11px * 1.5 */
+        font-size: 1.65rem; /* 1.1rem * 1.5 */
+        font-weight: 500;
+        border: 3px dashed #bbb; /* 2px * 1.5 */
+        text-align: center;
+      }
+      .action-button {
+        margin-top: 24px; /* 16px * 1.5 */
+        width: 80%;
+        height: 66px; /* 44px * 1.5 */
+        background: transparent !important;
+        border: none;
+        border-radius: 10.5px; /* 7px * 1.5 */
+        color: #fff !important;
+        font-size: 1.62rem; /* 1.08rem * 1.5 */
+        font-weight: 900;
+        text-align: center;
+        text-shadow:
+          0 4px 20px rgba(0,0,0,0.8),
+          0 2px 8px rgba(0,0,0,0.85),
+          0 1px 1px rgba(0,0,0,0.9);
+        opacity: 1;
+        cursor: pointer;
+        transition: opacity 0.2s, box-shadow 0.2s;
+        box-shadow: none !important;
+        /* remove visible button chrome */
+        padding: 0;
+      }
+      .action-button:hover,
+      .action-button:active,
+      .action-button:focus {
+        opacity: 1;
+        box-shadow: none;
+        background: transparent;
+      }
+      @media (max-width: 850px) {
+        .cards-row { flex-direction: column; gap: 33px;} /* 22px * 1.5 */
+        .card { width: 96vw; min-width: unset; }
+      }
+    </style>
+    <script>
+      // 각 버튼의 이동할 URL을 지정
+      document.addEventListener('DOMContentLoaded', function() {
+        var buttons = document.querySelectorAll('.action-button');
+        var urls = [
+          'https://google.com/',     // 첫 번째 카드 버튼의 링크
+          'https://openai.com/',       // 두 번째 카드 버튼의 링크
+          'https://www.naver.com/'     // 세 번째 카드 버튼의 링크
+        ];
+        buttons.forEach(function(btn, idx) {
+          btn.addEventListener('click', function() {
+            window.location.href = urls[idx] || '#';
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="stars">
+      <!-- 별 만들기 (JS 바닥 별 or 하드코딩 일부 배치) -->
+      <div class="star" style="width:3px; height:3px; top:20%; left:15%; animation-delay: 0s;"></div>
+      <div class="star" style="width:2px; height:2px; top:80%; left:70%; animation-delay: 1s;"></div>
+      <div class="star" style="width:2.5px; height:2.5px; top:43%; left:62%; animation-delay: 2.3s;"></div>
+      <div class="star" style="width:1.5px; height:1.5px; top:55%; left:25%; animation-delay: .8s;"></div>
+      <div class="star" style="width:3.5px; height:3.5px; top:35%; left:80%; animation-delay: .5s;"></div>
+      <div class="star" style="width:1.8px; height:1.8px; top:60%; left:50%; animation-delay: 1.4s;"></div>
+      <div class="star" style="width:2px; height:2px; top:10%; left:90%; animation-delay: .6s;"></div>
+      <div class="star" style="width:2.8px; height:2.8px; top:47%; left:10%; animation-delay: 1.2s;"></div>
+      <div class="star" style="width:2.1px; height:2.1px; top:76%; left:43%; animation-delay: .3s;"></div>
+      <div class="star" style="width:3px; height:3px; top:65%; left:81%; animation-delay: .9s;"></div>
+    </div>
+    <div class="content">
+      <div class="title">Start Your AI Business with Orbital</div>
+      <div class="cards-row">
+        <div class="card">
+          <div class="img-placeholder">이미지 자리</div>
+          <button class="action-button">Learn More</button>
+        </div>
+        <div class="card">
+          <div class="img-placeholder">이미지 자리</div>
+          <button class="action-button">Learn More</button>
+        </div>
+        <div class="card">
+          <div class="img-placeholder">이미지 자리</div>
+          <button class="action-button">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
