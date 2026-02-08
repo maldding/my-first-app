@@ -98,6 +98,20 @@
         margin-bottom: 39px;
         display: block;
       }
+      .card-title {
+        color: #fff;
+        font-size: 1.8rem;
+        font-weight: 800;
+        margin: 0 0 15px 0;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      }
+      .card-description {
+        color: #ddd;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        word-break: keep-all; /* 한글 줄바꿈 예쁘게 */
+      }
       .img-placeholder {
         width: 270px;  /* 180px * 1.5 */
         height: 270px; /* 180px * 1.5 (이미지 자리를 세로로 1.5배 증가) */
@@ -182,8 +196,13 @@
       <div class="title">Start Your AI Business with Orbital</div>
       <div class="cards-row">
         <div class="card">
-          <img src="./assets/space_busyness.png" alt="space_busyness" class="card-img" width="270" height="270">
-          <button class="action-button">busyness</button>
+          <img src="./assets/space_busyness.png" alt="AI 상담 에이전트" class="card-img">
+          <h3 class="card-title">24/7 AI 상담 에이전트</h3>
+          <p class="card-description">
+            반복되는 단순 문의는 AI에게 맡기고,<br>
+            당신은 더 중요한 비즈니스에 집중하세요.
+          </p>
+          <button class="action-button">상담 신청하기</button>
         </div>
         <div class="card">
           <img src="./assets/beauty.jpg" alt="beauty" class="card-img" width="270" height="270">
